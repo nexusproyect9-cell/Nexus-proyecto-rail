@@ -192,19 +192,17 @@
                 </ul>
             </div>
 
-            <!-- Formulario funcional con Web3Forms -->
-            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="2907e5f1-4aa0-46b3-9be2-905426acfbe3">
-                <input type="hidden" name="subject" value="Nuevo mensaje desde sitio web NEXUS RAIL PROJECT">
-                <input type="checkbox" name="botcheck" style="display:none;" aria-hidden="true">
+       <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
-                <input type="text" name="name" placeholder="Nombre completo" required minlength="2">
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <textarea name="message" placeholder="Escribe tu mensaje o consulta aquí..." rows="6" required minlength="10"></textarea>
-
-                <button type="submit" class="btn">Enviar Mensaje</button>
-            </form>
-
+    <input type="hidden" name="access_key" value="2907e5f1-4aa0-46b3-9be2-905426acfbe3">
+    <input type="hidden" name="subject" value="Nuevo mensaje desde sitio web NEXUS RAIL">
+    <input type="hidden" name="redirect" value="https://tudominio.com/gracias.html"> <!-- Opcional: cambia por tu URL real si tienes página de gracias -->
+    <input type="checkbox" name="botcheck" style="display:none;" aria-hidden="true">
+    <input type="text" name="name" placeholder="Nombre" required minlength="2">
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Mensaje" required minlength="10"></textarea>
+    <button type="submit" class="btn">Enviar Mensaje</button>
+</form>
             <div id="form-message"></div>
         </div>
     </section>
@@ -252,3 +250,4 @@
 
 </body>
 </html>
+
