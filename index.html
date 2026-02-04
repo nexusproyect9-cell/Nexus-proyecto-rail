@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS RAIL PROJECT - Innovación y Soporte Ferroviario</title>
+    <style>
+        * { 
+            margin:0; 
+            padding:0; 
+            box-sizing:border-box; 
+        }
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            background:#f8f9fa; 
+            color:#333; 
+            line-height: 1.5;
+        }
+
+        .top-bar {
+            background: #003366;
+            padding: 12px 5%;
+            display: flex;
+            flex-wrap: wrap;           
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .logo-small {
+            height: 50px;              
+        }
+
+        .search-form {
+            flex: 1;
+            min-width: 200px;          
+            margin: 10px 20px;
+            display: flex;
+        }
+
+        .search-form input {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            outline: none;
+        }
+
+        .search-form button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #005599;
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;                 
+            flex-wrap: wrap;           
+            justify-content: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover { color: #66ccff; }
+
+        .hero {
+            position: relative;
+            min-height: 70vh;              
+            background: linear-gradient(rgba(0,51,102,0.65), rgba(0,51,102,0.65)),
+                        url('img/fondotren.png') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 15px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 15px;
+        }
+
+        .hero-logo {
+            width: 220px;                 
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 7vw, 4rem);   
+            margin: 0 0 15px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 4vw, 1.6rem);
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .hero .manufacturer {
+            font-size: clamp(0.95rem, 3.5vw, 1.3rem);
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        .company-info {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .company-info h2 {
+            color: #003366;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            margin-bottom: 25px;
+        }
+
+        .company-info p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .pdf-section {
+            text-align: center;
+            padding: 60px 15px;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+        }
+
+        .pdf-button {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            padding: 16px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(211,47,47,0.4);
+            transition: all 0.3s;
+        }
+
+        .pdf-button:hover {
+            background: #b71c1c;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(211,47,47,0.5);
+        }
+
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 40px 15px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 900px) {
+            .top-bar {
+                flex-direction: column;
+                padding: 15px 5%;
+                gap: 15px;
+            }
+            .search-form {
+                margin: 10px 0;
+                width: 90%;
+            }
+            nav ul {
+                gap: 15px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                min-height: 60vh;
+                padding: 30px 10px;
+            }
+            .hero-logo {
+                width: 180px;
+            }
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3.2rem);
+            }
+            .pdf-button {
+                padding: 14px 40px;
+                font-size: 1.2rem;
+            }
+            .company-info {
+                margin: 40px auto;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .logo-small {
+                height: 45px;
+            }
+            .search-form input, .search-form button {
+                font-size: 0.95rem;
+                padding: 9px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <img src="img/logo.png" alt="NEXUS Logo" class="logo-small">
+
+        <form class="search-form" onsubmit="return false;">
+            <input type="text" id="searchInput" placeholder="Buscar herramientas o productos...">
+            <button type="button" onclick="searchSite()">Buscar</button>
+        </form>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="empresa.html">Acerca de Nosotros</a></li>
+                <li><a href="products.html">Catálogo</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="img/logo.png" alt="NEXUS RAIL PROJECT Logo" class="hero-logo">
+            <h1>Innovación y Soporte para Proyectos Ferroviarios</h1>
+            <p>asistencia técnica y mantenimiento especializado</p>
+            <div class="manufacturer">
+                RAILWAY EQUIPMENT<br>
+                China's leading manufacturer of railway equipment
+            </div>
+        </div>
+    </section>
+
+    <div class="company-info">
+        <h2>¿Quiénes somos?</h2>
+        <p>
+            <strong>NEXUS RAIL PROJECT</strong> es una empresa de alta tecnología especializada en equipos de inspección y mantenimiento ferroviario. 
+            Nos comprometemos a convertirnos en un proveedor de renombre mundial, ofreciendo soluciones innovadoras y soporte técnico integral 
+            a través de nuestra alianza con Wuhan Linkage Track Equipment Co., Ltd. y otras marcas líderes.
+        </p>
+    </div>
+
+    <div class="pdf-section">
+        <a href="BROCHOURENEXUS.pdf" download class="pdf-button">
+            Descargar Catálogo Completo (PDF)
+        </a>
+        <p style="margin-top:20px; font-size:1.1rem; color:#555;">
+            Descarga nuestro brochure oficial con todos los equipos y especificaciones técnicas.
+        </p>
+    </div>
+
+    <footer>
+        <p>© 2026 NEXUS RAIL PROJECT. Todos los derechos reservados.</p>
+        <p>China's leading manufacturer of railway equipment</p>
+    </footer>
+
+    <script>
+        function searchSite() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (query === '') {
+                alert('Por favor escribe algo para buscar');
+                return;
+            }
+            window.location.href = `productos.html?search=${encodeURIComponent(query)}`;
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                searchSite();
+            }
+        });
+    </script>
+
+</body>
+</html>

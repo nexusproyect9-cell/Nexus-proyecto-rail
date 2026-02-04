@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - NEXUS RAIL PROJECT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header.contact-header {
+            background: #003366;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-height: 80px;
+        }
+
+        nav {
+            background: #005599;
+            padding: 15px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #66ccff;
+        }
+
+        #contacto {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        .info {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .info ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .info li {
+            margin: 15px 0;
+            font-size: 1.15rem;
+        }
+        .info i {
+            color: #d32f2f;
+            margin-right: 10px;
+            width: 25px;
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        input:focus, textarea:focus {
+            border-color: #005599;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0,85,153,0.15);
+        }
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        .btn {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #b71c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(211,47,47,0.3);
+        }
+
+        #form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            nav ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="contact-header">
+        <img src="img/logo.png" alt="Nexus Rail Project Logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="empresa.html">Quiénes Somos</a></li>
+            <li><a href="products.html">Catálogo</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p class="info">Póngase en contacto con nosotros para más información o consultas.</p>
+
+            <div class="info">
+                <ul>
+                    <li><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> +57 311 788 3653</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Bucaramanga, Colombia - Calle 17 #24-56</li>
+                    <li><i class="fas fa-envelope"></i> <strong>Email:</strong> nexusrailproject@gmail.com</li>
+                </ul>
+            </div>
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUÍ">
+                <input type="hidden" name="redirect" value="https://tudominio.com/gracias.html">
+                <input type="hidden" name="subject" value="Nuevo mensaje desde sitio web NEXUS RAIL">
+                <input type="checkbox" name="botcheck" style="display:none;" aria-hidden="true">
+
+                <input type="text" name="name" placeholder="Nombre" required minlength="2">
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Mensaje" required minlength="10"></textarea>
+
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+
+            <div id="form-message"></div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 NEXUS RAIL PROJECT. Todos los derechos reservados.
+    </footer>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const messageDiv = document.getElementById('form-message');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+
+            messageDiv.style.display = 'none';
+            messageDiv.className = '';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const json = await response.json();
+
+                if (json.success) {
+                    messageDiv.textContent = '¡Mensaje enviado con éxito! Pronto nos pondremos en contacto.';
+                    messageDiv.className = 'success';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    messageDiv.textContent = json.message || 'Hubo un error al enviar el mensaje. Intenta de nuevo.';
+                    messageDiv.className = 'error';
+                    messageDiv.style.display = 'block';
+                }
+            } catch (err) {
+                messageDiv.textContent = 'Error de conexión. Verifica tu internet e intenta nuevamente.';
+                messageDiv.className = 'error';
+                messageDiv.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>
